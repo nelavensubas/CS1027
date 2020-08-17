@@ -1,0 +1,6 @@
+
+public class EmptyStackException {
+	public String EmptyStackException(String message) {
+		return message;
+	}
+}

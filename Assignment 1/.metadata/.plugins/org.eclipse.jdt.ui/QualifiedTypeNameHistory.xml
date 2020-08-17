@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="image.processing.ImageOperation"/>
+    <fullyQualifiedTypeName name="image.processing.operations.InverseOperation"/>
+    <fullyQualifiedTypeName name="image.processing.operations.IdentityOperation"/>
+</qualifiedTypeNameHistroy>

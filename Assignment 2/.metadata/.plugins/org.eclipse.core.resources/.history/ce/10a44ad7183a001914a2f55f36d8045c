@@ -1,0 +1,96 @@
+import java.util.Arrays;
+import java.util.EmptyStackException;
+
+public class ArrayStack<T> implements ArrayStackADT<T> {
+	
+	private T[] stack;
+	private int top;
+	
+	public ArrayStack() {
+		stack = (T[]) new Object[20];
+		top = -1;
+	}
+	
+	public ArrayStack(int initialCapacity) {
+		stack = (T[]) new Object[initialCapacity];
+		top = -1;
+	}
+
+	@Override
+	public void push(T dataItem) {
+		if(length() == size() && stack.length < 100) {
+			T[] newArrayStack = (T[]) Arrays.copyOf(stack, stack.length * 2);
+			stack = newArrayStack;
+		} else if(length() == size() && stack.length >= 100) {
+			T[] newArrayStack = (T[]) Arrays.copyOf(stack, stack.length + 50);
+			stack = newArrayStack;
+		}
+		
+		stack[top + 1] = dataItem;
+		top += 1;
+	}
+
+	@Override
+	public T pop() throws EmptyStackException {
+		if (size() == 0) {
+			throw new EmptyStackException("You're stack is empty.");
+		}
+		
+		T result = stack[top];
+		stack[top] = null;
+		top--;
+		
+		if(top + 1 == Math.floor((stack.length / 3)) && stack.length > 20) {
+			T[] newArrayStack = (T[]) Arrays.copyOf(stack, stack.length / 2);
+			stack = newArrayStack;
+		}
+		
+		return result;
+	}
+
+	@Override
+	public T peek() throws EmptyStackException {
+		if (size() == 0) {
+			 throw new EmptyStackException();
+		}
+		return stack[top];
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return top == -1;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return top + 1;
+	}
+	
+	/**
+	 * Returns a string representation of this stack.
+	 * 
+	 * @return String representation of this stack Note that LinearNode does not
+	 *         have a toString() method
+	 */
+	public String toString() {
+		String result = "Stack: ";
+
+	    for (int i = 0; i <= top; i++) {
+	        if(i != top) {
+	        	result += stack[i] + ", ";
+	        } else if(i == top) {
+	        	result += stack[i];
+	        }
+	    }
+
+	    return result;
+		
+	}
+
+	public int length() {
+		// TODO Auto-generated method stub
+		return stack.length;
+	}
+}

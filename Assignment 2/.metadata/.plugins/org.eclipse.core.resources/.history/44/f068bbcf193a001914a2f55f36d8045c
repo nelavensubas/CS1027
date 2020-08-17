@@ -1,0 +1,7 @@
+
+public class EmptyStackException {
+	public Exception EmptyStackException(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

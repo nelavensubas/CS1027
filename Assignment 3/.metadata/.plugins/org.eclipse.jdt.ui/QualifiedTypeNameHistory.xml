@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="DLList"/>
+    <fullyQualifiedTypeName name="DLNode"/>
+    <fullyQualifiedTypeName name="InvalidDataItemException"/>
+    <fullyQualifiedTypeName name="EmptyListException"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="Map"/>
+    <fullyQualifiedTypeName name="ShortestPath"/>
+    <fullyQualifiedTypeName name="java.awt.event.ItemEvent"/>
+</qualifiedTypeNameHistroy>
